@@ -33,7 +33,7 @@ export default function App() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'Sagar_Singh_Resume_Simulated.pdf';
+    link.download = './01_resume_sagar_singh_DA.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
