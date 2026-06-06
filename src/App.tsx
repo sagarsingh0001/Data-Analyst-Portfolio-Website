@@ -24,16 +24,9 @@ export default function App() {
   setToastMessage('Sagar Singh - Data Analyst Resume.pdf Download Initiated!');
   setShowToast(true);
 
-  setTimeout(() => {
-    setShowToast(false);
-  }, 4000);
+  setTimeout(() => setShowToast(false), 4000);
 
-  const link = document.createElement('a');
-  link.href = './src/01_resume_sagar_singh_DA.pdf'; // Path to your resume file
-  link.download = '01_resume_sagar_singh_DA.pdf';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  window.open('/01_resume_sagar_singh_DA.pdf', '_blank');
 };
 
   const renderActiveView = () => {
