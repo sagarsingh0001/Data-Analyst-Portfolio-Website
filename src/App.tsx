@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import { projectsData } from './data';
 import { motion, AnimatePresence } from 'motion/react';
 import { FileCheck, ArrowRight, Download, Eye } from 'lucide-react';
+import resumePDF from '../src/assets/01_resume_sagar_singh_DA.pdf'
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<string>('home');
@@ -23,10 +24,11 @@ export default function App() {
   const handleDownloadCV = () => {
   setToastMessage('Sagar Singh - Data Analyst Resume.pdf Download Initiated!');
   setShowToast(true);
-
   setTimeout(() => setShowToast(false), 4000);
-
-  window.open('/01_resume_sagar_singh_DA.pdf', '_blank');
+  const link = document.createElement('a');
+  link.href = resumePDF;
+  link.download = 'Sagar_Singh_Resume.pdf';
+  link.click();
 };
 
   const renderActiveView = () => {
