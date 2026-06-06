@@ -29,7 +29,7 @@ export default function App() {
   }, 4000);
 
   const link = document.createElement('a');
-  link.href = './01_resume_sagar_singh_DA.pdf'; // Path to your resume file
+  link.href = './src/01_resume_sagar_singh_DA.pdf'; // Path to your resume file
   link.download = '01_resume_sagar_singh_DA.pdf';
   document.body.appendChild(link);
   link.click();
