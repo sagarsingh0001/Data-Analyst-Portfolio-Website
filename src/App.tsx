@@ -21,24 +21,20 @@ export default function App() {
   }, [activeTab]);
 
   const handleDownloadCV = () => {
-    setToastMessage('Sagar Singh - Data Analyst Resume.pdf Download Initiated!');
-    setShowToast(true);
-    setTimeout(() => {
-      setShowToast(false);
-    }, 4000);
+  setToastMessage('Sagar Singh - Data Analyst Resume.pdf Download Initiated!');
+  setShowToast(true);
 
-    // Simulate downloading by creating a dummy file anchor download
-    const dummyContent = "SIMULATED SAGAR SINGH RESUME DATA - Core Competencies: Data Warehousing, SQL, Python, Power BI, Tableau.";
-    const blob = new Blob([dummyContent], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = './01_resume_sagar_singh_DA.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-  };
+  setTimeout(() => {
+    setShowToast(false);
+  }, 4000);
+
+  const link = document.createElement('a');
+  link.href = './01_resume_sagar_singh_DA.pdf'; // Path to your resume file
+  link.download = '01_resume_sagar_singh_DA.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 
   const renderActiveView = () => {
     switch (activeTab) {
